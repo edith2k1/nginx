@@ -80,9 +80,9 @@ Reload NGINX with the command
 
 4. Results
 
-    ![image](https://user-images.githubusercontent.com/100410064/167248802-d16c7ec5-6ae3-4a4f-bc30-5a8c6c95856c.png)
-
-    ![image](https://user-images.githubusercontent.com/100410064/167248841-fa82f420-004c-4749-83a4-d1edb90d9978.png)
+    ![image](https://user-images.githubusercontent.com/100410064/167249968-0b7d3839-5ae6-435b-8f90-bdda8c498e12.png)
+    
+    ![image](https://user-images.githubusercontent.com/100410064/167250036-585c3fd9-4047-430e-a6f6-d8d58bb93957.png)
 ***
 
 [^1]: https://www.techrepublic.com/article/how-to-cache-static-content-on-nginx/
