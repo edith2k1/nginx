@@ -5,6 +5,8 @@
 - [Configure Cache Static File](#static)
 
 - [Amplify – NGINX Monitoring Made Easy](#amplify)
+
+- [Configure NGINX as a Reverse Proxy](#proxy)
 ***
 
 ## Launch WordPress With OpenSSL <a id="wp-ssl"></a>
@@ -179,9 +181,50 @@ Reload NGINX with the command
 3. Now restart Nginx services once more, to effect the latest changes.
 
        sudo systemctl restart nginx
+       
+**Step 4. Monitor Nginx Web Server Via Amplify Agent**
+       
+Finally, you can begin monitoring your Nginx web server from the Amplify Web UI.
 
+![image](https://user-images.githubusercontent.com/100410064/167258547-a712f57f-36e4-4702-954c-263304ba832f.png)
+
+![image](https://user-images.githubusercontent.com/100410064/167258909-aea84fab-fdaf-4762-85e6-4babf36b6827.png)
+
+***
+
+## Configure NGINX as a Reverse Proxy <a id="proxy"></a> [^3]
+
+Step 1. Create a new config file
+
+    sudo vi /etc/nginx/conf.d/domain.conf
+    
+> Copy this to the file
+
+    server {
+        listen 81;
+        server_name 0.0.0.0; #change to your domain name
+
+        location / {
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $http_host;
+                proxy_pass http://192.168.217.140:81;  #change to your internal server IP
+                proxy_redirect off;
+        }
+    }
+    
+> `http://192.168.217.139:81` ===> `http://192.168.217.140:81`
+    
+Step 2. Restart Nginx Service
+
+    sudo service nginx restart
+    
+### Testing
+
+![image](https://user-images.githubusercontent.com/100410064/167259300-717e6918-2478-4835-b979-864bc08b3daf.png)
 
 ***
 
 [^1]: https://www.techrepublic.com/article/how-to-cache-static-content-on-nginx/
 [^2]: https://www.tecmint.com/amplify-nginx-monitoring-tool/
+[^3]: https://viblo.asia/p/cau-hinh-reverse-proxy-tren-nginx-Az45bGxqKxY
