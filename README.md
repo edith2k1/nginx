@@ -186,9 +186,9 @@ Reload NGINX with the command
        
 Finally, you can begin monitoring your Nginx web server from the Amplify Web UI.
 
-![image](https://user-images.githubusercontent.com/100410064/167258547-a712f57f-36e4-4702-954c-263304ba832f.png)
+![image](https://user-images.githubusercontent.com/100410064/167259469-e8a2174a-85b7-4b45-b0ab-0012f6f7f41a.png)
 
-![image](https://user-images.githubusercontent.com/100410064/167258909-aea84fab-fdaf-4762-85e6-4babf36b6827.png)
+![image](https://user-images.githubusercontent.com/100410064/167259520-5d794c0b-0f7b-4adf-b042-84fb3c74023a.png)
 
 ***
 
