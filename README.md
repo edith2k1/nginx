@@ -87,7 +87,7 @@ Reload NGINX with the command
 
 ***
 
-## Amplify – NGINX Monitoring Made Easy <a id="amplify"></a>
+## Amplify – NGINX Monitoring Made Easy <a id="amplify"></a>[^2]
 
 **Step 1: Install Amplify Agent on Linux System**
 
@@ -184,3 +184,4 @@ Reload NGINX with the command
 ***
 
 [^1]: https://www.techrepublic.com/article/how-to-cache-static-content-on-nginx/
+[^2]: https://www.tecmint.com/amplify-nginx-monitoring-tool/
