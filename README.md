@@ -208,12 +208,12 @@ Step 1. Create a new config file
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
                 proxy_set_header Host $http_host;
-                proxy_pass http://192.168.217.140:81;  #change to your internal server IP
+                proxy_pass http://192.168.217.140:8080;  #change to your internal server IP
                 proxy_redirect off;
         }
     }
     
-> `http://192.168.217.139:81` ===> `http://192.168.217.140:81`
+> `http://192.168.217.139:81` ===> `http://192.168.217.140:8080`
     
 Step 2. Restart Nginx Service
 
@@ -221,7 +221,7 @@ Step 2. Restart Nginx Service
     
 ### Testing
 
-![image](https://user-images.githubusercontent.com/100410064/167259300-717e6918-2478-4835-b979-864bc08b3daf.png)
+![image](https://user-images.githubusercontent.com/100410064/167261556-35792c61-744d-4da8-b745-4c812a91654a.png)
 
 ***
 
