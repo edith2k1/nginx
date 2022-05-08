@@ -235,7 +235,7 @@ Before Block
 
 ![image](https://user-images.githubusercontent.com/100410064/167291190-72c51b16-e1ea-4a17-9c80-fe6a65e15fb1.png)
 
-Run this command
+Run this command `on 192.168.217.140`
 
     sudo vi /etc/nginx/sites-available/default
     
