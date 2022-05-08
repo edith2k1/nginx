@@ -39,7 +39,7 @@ Reload NGINX with the command
 
 1. Create an index.html file
 
-       sudo vi /var/www/html/index.html
+       sudo rm -rf /var/www/html/ ; sudo vi /var/www/html/index.html
 
       > Copy this to the file
 
