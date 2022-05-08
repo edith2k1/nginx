@@ -9,6 +9,8 @@
 - [Configure NGINX as a Reverse Proxy](#proxy)
 
 - [Block IP](#ip)
+
+- [Install ApacheBench](#ab)
 ***
 
 ## Launch WordPress With OpenSSL <a id="wp-ssl"></a>
@@ -276,8 +278,85 @@ Testing
 
 ***
 
+## Install ApacheBench <a id="ab"></a> [^6][^7]
+
+Run this command
+
+    sudo apt-get install apache2-utils -y
+    
+Testing
+
+    ab -n 100000 -c 1000 https://192.168.217.139/
+    
+   > -n requests     Number of requests to perform
+   > 
+   > -c concurrency  Number of multiple requests to make at a time
+
+Result
+
+    This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
+    Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+    Licensed to The Apache Software Foundation, http://www.apache.org/
+
+    Benchmarking 192.168.217.139 (be patient)
+    Completed 10000 requests
+    Completed 20000 requests
+    Completed 30000 requests
+    Completed 40000 requests
+    Completed 50000 requests
+    Completed 60000 requests
+    Completed 70000 requests
+    Completed 80000 requests
+    Completed 90000 requests
+    Completed 100000 requests
+    Finished 100000 requests
+
+
+    Server Software:        nginx/1.18.0
+    Server Hostname:        192.168.217.139
+    Server Port:            443
+    SSL/TLS Protocol:       TLSv1.2,ECDHE-RSA-AES256-GCM-SHA384,2048,256
+    Server Temp Key:        X25519 253 bits
+
+    Document Path:          /
+    Document Length:        19 bytes
+
+    Concurrency Level:      1000
+    Time taken for tests:   104.282 seconds
+    Complete requests:      100000
+    Failed requests:        0
+    Non-2xx responses:      100000
+    Total transferred:      19800000 bytes
+    HTML transferred:       1900000 bytes
+    Requests per second:    958.94 [#/sec] (mean)
+    Time per request:       1042.819 [ms] (mean)
+    Time per request:       1.043 [ms] (mean, across all concurrent requests)
+    Transfer rate:          185.42 [Kbytes/sec] received
+
+    Connection Times (ms)
+                  min  mean[+/-sd] median   max
+    Connect:       12  935 2370.2    506   77772
+    Processing:     0   28  81.0      2    2546
+    Waiting:        0   19  61.3      2    2546
+    Total:        105  962 2376.1    512   77803
+
+    Percentage of the requests served within a certain time (ms)
+      50%    512
+      66%    583
+      75%    697
+      80%    782
+      90%   1537
+      95%   3300
+      98%   4393
+      99%   7748
+     100%  77803 (longest request)
+
+***
+
 [^1]: https://www.techrepublic.com/article/how-to-cache-static-content-on-nginx/
 [^2]: https://www.tecmint.com/amplify-nginx-monitoring-tool/
 [^3]: https://viblo.asia/p/cau-hinh-reverse-proxy-tren-nginx-Az45bGxqKxY
 [^4]: https://vinasupport.com/chan-dia-chi-ip-address-tren-nginx-web-server/
 [^5]: https://stackoverflow.com/questions/3119108/return-custom-403-error-page-with-nginx
+[^6]: https://viblo.asia/p/benchmark-peformance-on-web-server-season-1-924lJp3zKPM
+[^7]: https://www.digitalocean.com/community/tutorials/how-to-use-apachebench-to-do-load-testing-on-an-ubuntu-13-10-vps
