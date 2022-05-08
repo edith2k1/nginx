@@ -7,6 +7,8 @@
 - [Amplify – NGINX Monitoring Made Easy](#amplify)
 
 - [Configure NGINX as a Reverse Proxy](#proxy)
+
+- [Block IP](#ip)
 ***
 
 ## Launch WordPress With OpenSSL <a id="wp-ssl"></a>
@@ -225,6 +227,57 @@ Step 2. Restart Nginx Service
 
 ***
 
+## Block IP <a id="ip"></a> [^4][^5]
+
+Before Block
+
+![image](https://user-images.githubusercontent.com/100410064/167282816-4fef60a4-6859-4bfb-aee2-a001b7bd5b37.png)
+
+Run this command
+
+    sudo vi /etc/nginx/sites-available/default
+    
+Edit like this to block IP 192.168.217.140
+
+    server {
+
+        ...
+
+        error_page   403  /403.html;
+        location /403.html {
+            root      /var/www/html;
+            allow all;
+        }
+    
+        ...
+    
+        location / {
+            ...
+            deny    192.168.217.140;
+            ...
+        }
+    }
+    
+Custom 403 error page
+
+    sudo vi /var/www/html/403.html;
+    
+Paste this to the file
+
+    Your IP is blocked
+
+Restart Nginx Service
+
+    sudo service nginx restart
+    
+Testing
+
+![image](https://user-images.githubusercontent.com/100410064/167283202-86717f8d-d003-493d-b11e-6fb5489390ae.png)
+
+***
+
 [^1]: https://www.techrepublic.com/article/how-to-cache-static-content-on-nginx/
 [^2]: https://www.tecmint.com/amplify-nginx-monitoring-tool/
 [^3]: https://viblo.asia/p/cau-hinh-reverse-proxy-tren-nginx-Az45bGxqKxY
+[^4]: https://vinasupport.com/chan-dia-chi-ip-address-tren-nginx-web-server/
+[^5]: https://stackoverflow.com/questions/3119108/return-custom-403-error-page-with-nginx
