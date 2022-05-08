@@ -39,7 +39,7 @@ Reload NGINX with the command
 
 1. Create an index.html file
 
-       sudo vi /var/www/wordpress/index.html
+       sudo vi /var/www/html/index.html
 
       > Copy this to the file
 
@@ -67,7 +67,7 @@ Reload NGINX with the command
 
 2. Create a css.css file
 
-       sudo vi /var/www/wordpress/css.css
+       sudo vi /var/www/html/css.css
 
       > Copy this to the file
 
@@ -83,7 +83,7 @@ Reload NGINX with the command
 
 3. Download an image
 
-       sudo wget https://www.electrictoolbox.com/images/icons/linux-bsd.gif ; sudo cp ./linux-bsd.gif /var/www/wordpress
+       sudo wget https://www.electrictoolbox.com/images/icons/linux-bsd.gif ; sudo cp ./linux-bsd.gif /var/www/html
 
 4. Results
 
