@@ -83,7 +83,7 @@ Reload NGINX with the command
 
 3. Download an image
 
-       sudo wget https://www.electrictoolbox.com/images/icons/linux-bsd.gif
+       sudo wget https://www.electrictoolbox.com/images/icons/linux-bsd.gif ; sudo cp ./linux-bsd.gif /var/www/wordpress
 
 4. Results
 
