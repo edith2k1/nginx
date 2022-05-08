@@ -198,7 +198,7 @@ Finally, you can begin monitoring your Nginx web server from the Amplify Web UI.
 
 ## Configure NGINX as a Reverse Proxy <a id="proxy"></a> [^3]
 
-Step 1. Create a new config file
+Step 1. Create a new config file `on 192.168.217.140`
 
     sudo vi /etc/nginx/conf.d/domain.conf
     
