@@ -233,13 +233,13 @@ Step 2. Restart Nginx Service
 
 Before Block
 
-![image](https://user-images.githubusercontent.com/100410064/167282816-4fef60a4-6859-4bfb-aee2-a001b7bd5b37.png)
+![image](https://user-images.githubusercontent.com/100410064/167291190-72c51b16-e1ea-4a17-9c80-fe6a65e15fb1.png)
 
 Run this command
 
     sudo vi /etc/nginx/sites-available/default
     
-Edit like this to block IP 192.168.217.140
+Edit like this to block IP 192.168.217.139
 
     server {
 
@@ -255,7 +255,7 @@ Edit like this to block IP 192.168.217.140
     
         location / {
             ...
-            deny    192.168.217.140;
+            deny    192.168.217.139;
             ...
         }
     }
@@ -274,7 +274,7 @@ Restart Nginx Service
     
 Testing
 
-![image](https://user-images.githubusercontent.com/100410064/167283202-86717f8d-d003-493d-b11e-6fb5489390ae.png)
+![image](https://user-images.githubusercontent.com/100410064/167291282-0ab158be-b462-4298-a1e4-da4de79082ec.png)
 
 ***
 
